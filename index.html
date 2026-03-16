@@ -258,23 +258,43 @@
     .edu-school { font-size: 6.5pt; color: var(--muted); margin-top: 1px; }
 
     /* ── Print styles ── */
+    @page { size: letter portrait; margin: 0; }
+
     @media print {
-      body { background: none; font-size: 8pt; }
+      html, body {
+        width: 8.5in;
+        height: 11in;
+        overflow: hidden;
+        background: none;
+        font-size: 7pt;
+      }
       .resume {
-        display: block;
-        max-width: 100%;
+        display: flex;
+        width: 8.5in;
+        height: 11in;
+        overflow: hidden;
         margin: 0;
         box-shadow: none;
       }
       .sidebar {
-        display: none;
+        display: block;
+        width: 190px;
+        padding: 14mm 11px 10mm 12px;
       }
       .main {
-        padding: 18mm 18mm 15mm 18mm;
+        padding: 14mm 18px 10mm 18px;
       }
-      .section-title { color: #333; }
-      .timeline-entry { page-break-inside: avoid; }
-      .main-section { page-break-inside: avoid; }
+      .section-title { color: #333; margin-bottom: 8px; }
+      .main-section { margin-bottom: 14px; }
+      .resume-header { margin-bottom: 14px; }
+      .resume-header h1 { font-size: 17pt; }
+      .sidebar-section { margin-bottom: 14px; }
+      .competency { margin-bottom: 6px; }
+      .bullet-list li { margin-bottom: 4px; }
+      .timeline-entry { margin-bottom: 8px; }
+      .timeline-role { font-size: 8.5pt; }
+      .timeline-org { margin-bottom: 2px; }
+      .timeline-desc { font-size: 7pt; line-height: 1.4; }
     }
 
     @media (max-width: 640px) {
@@ -299,7 +319,7 @@
     <section class="main-section">
       <div class="section-title">Professional Summary</div>
       <div class="prose-content">
-        <p>Leader, operator, and organisation builder with <strong>over a decade of experience</strong> at the interface of startups and large organisations. <strong>Founded and led Startup Village, India's first PPP technology business incubator (TBI).</strong> Led India's digital startup industry body. Has designed and <strong>run structured innovation and partnership programs</strong> connecting enterprise SaaS startups with Fortune 500 corporations, while simultaneously operating inside startups as a hands-on <strong>fractional CXO</strong> and <strong>delivering exits</strong> for founders. Brings along <strong>operating experience</strong> across enterprise SaaS, mobile commerce, AI/ML, computer vision, B2B analytics, and autonomous AI agents.</p>
+        <p>Leader, operator, and institution builder at the interface of startups and large organisations. <strong>Founded Startup Village</strong>, India's first PPP technology incubator, and led <strong>ADIF</strong>, India's digital startup industry body. Designed and ran <strong>structured innovation programs</strong> connecting enterprise SaaS startups with Fortune 500 corporations. Operates as a hands-on <strong>fractional CXO</strong> with three startup exits delivered across enterprise SaaS, mobile commerce, and AI.</p>
       </div>
     </section>
 
@@ -307,18 +327,9 @@
     <section class="main-section">
       <div class="section-title">Career Highlights</div>
       <ul class="bullet-list">
-        <li>Founded and led <strong>Startup Village</strong>, India's first PPP technology incubator, co-built with the Government of India and Government of Kerala. Incubated 500+ startups, created 2,889 jobs, earning the <strong>National Award for Best Technology Business Incubator, DST GoI (2015).</strong> Chief Mentor: <strong>Kris Gopalakrishnan</strong>, co-founder of Infosys. Media coverage in Reuters, BBC, Business Standard, Hindu, YourStory, and Indian Express.</li>
-        <li>Served as Executive Director of <strong>ADIF</strong>, India's leading digital startup industry body, building marquee membership including <strong>PayTM, Bharatmatrimony, MapMyIndia, and ShareChat</strong>. Represented the organisation at the <strong>Parliamentary Standing Committee on Finance</strong> and led the organisation's public narrative across media, government, and industry.</li>
-        <li>Delivered <strong>three startup exits</strong> through hands-on fractional CXO engagements: Agrima Infotech acquired by <strong>BigBasket</strong>, iTraveller acquired by <strong>lastminute.com</strong> at <strong>$3M revenue</strong>, and UnityLiving acquired by <strong>MyGate</strong>. Currently taking <strong>Appmaker</strong> toward strategic acquisition having scaled it to approximately <strong>$1M in revenue</strong> and profitability.</li>
-      </ul>
-    </section>
-
-    <!-- Relevant Experience -->
-    <section class="main-section">
-      <div class="section-title">Relevant Experience</div>
-      <ul class="bullet-list">
-        <li>At <strong>UST Global's Garage Ventures</strong>, assessed the innovation program and recommended a full strategic pivot from an internal entrepreneurship initiative to a <strong>B2B strategic partnership program</strong>. Made portfolio decisions on three incubator startups: one spun off, one pivoted B2C to B2B, one shut down. <strong>Facilitated co-sell partnerships</strong> with an HR Tech startup (RippleHire) and a robotics startup (Sastra Robotics).</li>
-        <li>Designed and ran <strong>Startup Bridge</strong> (2018 edition), a cross-border program <strong>connecting Indian enterprise SaaS startups with Fortune 500 corporations</strong> in the United States. Alumni include Whatfix, MoEngage, Cloudcherry (acquired by Cisco), and Unbxd (acquired by Netcore Cloud for <strong>$100M</strong>).</li>
+        <li><strong>Startup Village</strong> — Founded India's first PPP Technology Business Incubator (GoI DST + Kerala). 500+ startups, 2,889 jobs. National Award, DST GoI (2015). Chief Mentor: Kris Gopalakrishnan, co-founder of Infosys.</li>
+        <li><strong>ADIF</strong> — Executive Director, India's leading digital startup industry body. Members: PayTM, Bharatmatrimony, MapMyIndia, ShareChat. Testimony to the Parliamentary Standing Committee on Finance.</li>
+        <li><strong>3 Exits as Fractional CXO</strong> — Agrima Infotech (BigBasket), iTraveller (lastminute.com, $3M revenue), UnityLiving (MyGate). Appmaker approaching acquisition at ~$1M revenue.</li>
       </ul>
     </section>
 
@@ -338,7 +349,7 @@
           <div class="timeline-content">
             <div class="timeline-role">Fractional CBO</div>
             <div class="timeline-org">Appmaker</div>
-            <div class="timeline-desc">Enterprise SaaS platform enabling retail brands to deploy native mobile commerce apps on Shopify. 100+ enterprise retail clients including Jockey, Levis, Westside, and Rare Rabbit. Scaled to ~$1M annual revenue, profitable. Strategic acquisition in progress.</div>
+            <div class="timeline-desc">Enterprise SaaS for native mobile commerce on Shopify. 100+ clients (Jockey, Levis, Westside). ~$1M annual revenue, profitable. Strategic acquisition in progress.</div>
           </div>
         </div>
 
@@ -353,7 +364,7 @@
           <div class="timeline-content">
             <div class="timeline-role">Executive Director</div>
             <div class="timeline-org">ADIF</div>
-            <div class="timeline-desc">Led strategy and growth of India's leading digital startup industry body. Built marquee membership; represented ADIF at the Parliamentary Standing Committee on Finance; owned the public narrative for India's digital startup ecosystem.</div>
+            <div class="timeline-desc">Led strategy and membership of India's leading digital startup industry body. Represented at Parliamentary Standing Committee on Finance. Owned the public narrative for India's digital startup ecosystem.</div>
           </div>
         </div>
 
@@ -368,7 +379,7 @@
           <div class="timeline-content">
             <div class="timeline-role">Fractional Partner | Innovation Programs</div>
             <div class="timeline-org">ZG</div>
-            <div class="timeline-desc">Designed and managed innovation and co-sell programs for corporations and governments. Key engagements: UST Global Garage Ventures, Startup Bridge Silicon Valley, Upekkha Venture Catalyst, WEQ / AnitaB.org, and SSEP Rajasthan.</div>
+            <div class="timeline-desc">Designed and ran innovation and co-sell programs for corporations. Key: UST Global Garage Ventures (strategic pivot from internal incubator to B2B partnerships), Startup Bridge Silicon Valley (alumni: Whatfix, MoEngage, Cloudcherry/Cisco, Unbxd/$100M).</div>
           </div>
         </div>
 
@@ -383,7 +394,7 @@
           <div class="timeline-content">
             <div class="timeline-role">Fractional CXO | Tech Startups</div>
             <div class="timeline-org">ZG</div>
-            <div class="timeline-desc">Hands-on operator across growth, product, and strategy. Three exits: Agrima Infotech (BigBasket), iTraveller (lastminute.com, $3M revenue), UnityLiving (MyGate). Currently advising Meetily (AI meeting assistant, 10K+ GitHub stars) and Leadmetrics (autonomous AI marketing agents for enterprise).</div>
+            <div class="timeline-desc">Hands-on operator across growth, product, and strategy. Three exits: Agrima (BigBasket), iTraveller (lastminute.com, $3M), UnityLiving (MyGate). Advisor to Meetily (AI meeting assistant, 10K+ GitHub stars) and Leadmetrics (autonomous AI marketing agents).</div>
           </div>
         </div>
 
@@ -398,7 +409,7 @@
           <div class="timeline-content">
             <div class="timeline-role">Founding CEO &amp; Board Member</div>
             <div class="timeline-org">Startup Village</div>
-            <div class="timeline-desc">Founded India's first PPP Technology Business Incubator with GoI (DST) and Government of Kerala. 500+ startups, 2,889 jobs, ₹30Cr+ deployed across 21 portfolio companies. National Award, DST GoI. Led SVSquare, first Kerala startup delegation to Silicon Valley.</div>
+            <div class="timeline-desc">Founded India's first PPP Technology Business Incubator (GoI DST + Kerala). 500+ startups, 2,889 jobs, ₹30Cr+ across 21 portfolio companies. National Award, DST GoI. Led SVSquare — Kerala's first Silicon Valley delegation.</div>
           </div>
         </div>
 
@@ -428,7 +439,7 @@
           <div class="timeline-content">
             <div class="timeline-role">Co-Founder</div>
             <div class="timeline-org">MobME Wireless Solutions</div>
-            <div class="timeline-desc">Campus startup that grew into one of India's recognised early mobile VAS players. Commercial partnerships with Airtel, Vodafone, BSNL, and Idea. 100+ team. NASSCOM Top 50 Emerging Companies; NASSCOM IT Innovator 2008.</div>
+            <div class="timeline-desc">Campus startup → one of India's early mobile VAS players. Airtel, Vodafone, BSNL, Idea partnerships. 100+ team. NASSCOM Top 50 Emerging Companies; NASSCOM IT Innovator 2008.</div>
           </div>
         </div>
 
